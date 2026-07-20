@@ -1,15 +1,15 @@
-import { character } from '@/types/characters'
+import { post } from '@/types/posts'
 import BlogPost from './BlogPost'
 
 interface blogListProps {
-  characters: character[]
+  posts: post[]
 }
 
-const BlogList = ({ characters }: blogListProps) => {
+const BlogList = ({ posts }: blogListProps) => {
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-      {characters.map((character) => (
-        <BlogPost key={character.id} character={character} />
+    <section className="felx-1 space-y-4">
+      {posts.map((post) => (
+        <BlogPost key={post.id} post={post} />
       ))}
     </section>
   )

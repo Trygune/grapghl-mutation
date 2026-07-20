@@ -1,6 +1,6 @@
 'use client'
 
-import { pagesInfo } from '@/types/characters'
+import { pagesInfo } from '@/types/posts'
 import {
   ChevronFirst,
   ChevronLast,
@@ -27,7 +27,7 @@ const Pagination = ({ info }: { info: pagesInfo }) => {
   return (
     <nav className="flex items-center justify-center gap-x-1 md:gap-x-3 py-8 md:py-10">
       <button
-        onClick={() => handlePageChange(1)}
+        onClick={() => handlePageChange(info.first.page)}
         disabled={page === 1}
         className="flex items-center gap-2 rounded-lg border border-green-600 bg-green-900/10 px-4 py-2.5 md:py-2 text-green-600 transition hover:bg-green-600/80 hover:text-white disabled:pointer-events-none disabled:opacity-40 cursor-pointer"
       >
@@ -35,7 +35,7 @@ const Pagination = ({ info }: { info: pagesInfo }) => {
         <span className="hidden md:block">First Page</span>
       </button>
       <button
-        onClick={() => handlePageChange(info.prev)}
+        onClick={() => handlePageChange(info.prev.page)}
         disabled={page === 1}
         className="flex items-center gap-2 rounded-lg border border-green-600 bg-green-900/10 px-4 py-2.5 md:py-2 text-green-600 transition hover:bg-green-600/80 hover:text-white disabled:pointer-events-none disabled:opacity-40 cursor-pointer"
       >
@@ -44,20 +44,20 @@ const Pagination = ({ info }: { info: pagesInfo }) => {
       </button>
 
       <div className="rounded-lg border border-green-600 bg-green-900/10 px-5 py-2 font-semibold text-green-600">
-        {page} / {info.pages}
+        {page} / {info.last.page}
       </div>
 
       <button
-        onClick={() => handlePageChange(info.next)}
-        disabled={page === info.pages}
+        onClick={() => handlePageChange(info.next.page)}
+        disabled={page === info.last.page}
         className="flex items-center gap-2 rounded-lg border border-green-600 bg-green-900/10 px-4 py-2.5 md:py-2 text-green-600 transition hover:bg-green-600/80 hover:text-white disabled:pointer-events-none disabled:opacity-40 cursor-pointer"
       >
         <span className="hidden md:block">Next</span>
         <ChevronRight size={18} />
       </button>
       <button
-        onClick={() => handlePageChange(info.pages)}
-        disabled={page === info.pages}
+        onClick={() => handlePageChange(info.last.page)}
+        disabled={page === info.last.page}
         className="flex items-center gap-2 rounded-lg border border-green-600 bg-green-900/10 px-4 py-2.5 md:py-2 text-green-600 transition hover:bg-green-600/80 hover:text-white disabled:pointer-events-none disabled:opacity-40 cursor-pointer"
       >
         <span className="hidden md:block">Last Page</span>

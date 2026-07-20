@@ -10,7 +10,7 @@ import {
 const makeClient = () => {
   const httpLink = new HttpLink({
     // Use an absolute URL for SSR
-    uri: 'https://rickandmortyapi.com/graphql',
+    uri: 'https://graphqlzero.almansi.me/api',
     fetchOptions: {
       // Optional: Next.js-specific fetch options
       // Note: This doesn't work with `export const dynamic = "force-static"`

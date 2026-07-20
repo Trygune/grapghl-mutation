@@ -10,7 +10,7 @@ export const { getClient, query, PreloadQuery } = registerApolloClient(() => {
     cache: new InMemoryCache(),
     link: new HttpLink({
       // Use an absolute URL for SSR (relative URLs cannot be used in SSR)
-      uri: 'https://rickandmortyapi.com/graphql',
+      uri: 'https://graphqlzero.almansi.me/api',
       fetchOptions: {
         // Optional: Next.js-specific fetch options for caching and revalidation
         // See: https://nextjs.org/docs/app/api-reference/functions/fetch
