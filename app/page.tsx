@@ -1,8 +1,8 @@
 import { query } from '@/ApolloClient'
-import AddCharacter from '@/components/AddCharacter'
+import AddPost from '@/components/AddPost'
 import BlogHeader from '@/components/BlogHeader'
 import BlogList from '@/components/BlogList'
-import Pagination from '@/components/Pagination'
+import Pagination from '@/components/Pagination/Pagination'
 import { GET_POSTS } from '@/queries/posts'
 
 const Home = async ({
@@ -18,7 +18,6 @@ const Home = async ({
     query: GET_POSTS,
     variables: { page: pageNumber },
   })
-  console.log(data)
 
   if (error) return <p>Error : {error.message}</p>
   if (!data?.posts?.data?.length) {
@@ -26,9 +25,9 @@ const Home = async ({
   }
 
   return (
-    <main className="max-w-6xl w-full mx-auto px-2 py-6 md:px-6 md:py-10">
+    <main className="max-w-4xl w-full mx-auto px-2 py-6 md:px-6 md:py-10">
       <BlogHeader />
-      <AddCharacter />
+      <AddPost />
       <BlogList posts={data.posts.data} />
       <Pagination info={data.posts.links} />
     </main>

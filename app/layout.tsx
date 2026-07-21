@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full antialiased">
-      <body className="min-h-full flex flex-col bg-green-50">
+      <body className="min-h-full flex flex-col bg-blue-50">
         <ApolloWrapper>{children}</ApolloWrapper>
       </body>
     </html>

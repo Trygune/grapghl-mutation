@@ -13,7 +13,7 @@ export const UserProfile = ({ userId }: { userId: string }) => {
 
   return (
     <div className="flex justify-start items-center gap-x-2 text-sm text-gray-900 font-semibold absolute bottom-4 left-4">
-      <p className="text-gray-700">{data.user.company.name}</p>
+      <p className="text-gray-700">{data.post.user.company.name}</p>
       <button
         className="text-blue-600 hover:underline cursor-pointer text-sm"
         onClick={() =>

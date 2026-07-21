@@ -8,7 +8,7 @@ export const GET_POSTS: TypedDocumentNode<postsProps> =
   // >
   gql`
     query GetPosts($page: Int!) {
-      posts(options: { paginate: { page: $page } }) {
+      posts(options: { paginate: { page: $page }, sort: { order: DESC } }) {
         data {
           id
           title
